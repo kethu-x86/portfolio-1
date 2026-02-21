@@ -1,0 +1,14 @@
+x Build failed in 653ms
+error during build:
+[vite:css] [postcss] postcss-import: C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\tailwindcss\lib\index.js:1:1: Unknown word "use strict"
+file: C:/Users/Kai/Mod_Builds/Deepak/portfolio/src/styles/global.css:1:0
+    at Input.error (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\input.js:135:16)
+    at Parser.unknownWord (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\parser.js:595:22)
+    at Parser.other (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\parser.js:437:12)
+    at Parser.parse (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\parser.js:472:16)
+    at parse (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\parse.js:11:12)
+    at get root (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\no-work-result.js:43:14)
+    at Result.get [as root] (C:\Users\Kai\Mod_Builds\Deepak\portfolio\node_modules\postcss\lib\no-work-result.js:77:21)
+    at loadImportContent (file:///C:/Users/Kai/Mod_Builds/Deepak/portfolio/node_modules/vite/dist/node/chunks/dep-BB45zftN.js:867:33)
+    at async Promise.all (index 0)
+    at async resolveImportId (file:///C:/Users/Kai/Mod_Builds/Deepak/portfolio/node_modules/vite/dist/node/chunks/dep-BB45zftN.js:800:27)
