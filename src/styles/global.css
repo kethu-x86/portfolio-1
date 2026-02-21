@@ -12,15 +12,15 @@
 }
 
 /* ─── Base Reset ─────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 body {
   background-color: var(--bg);
@@ -35,13 +35,16 @@ body {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #3B82F6, #8B5CF6);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #60A5FA, #A78BFA);
 }
@@ -69,8 +72,15 @@ body::before {
 }
 
 @keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ─── Glassmorphism ──────────────────────────────────────── */
@@ -82,9 +92,17 @@ body::before {
 }
 
 /* ─── Glow Effects ───────────────────────────────────────── */
-.glow-blue  { box-shadow: 0 0 30px rgba(59, 130, 246, 0.25); }
-.glow-purple{ box-shadow: 0 0 30px rgba(139, 92, 246, 0.25); }
-.glow-green { box-shadow: 0 0 30px rgba(16, 185, 129, 0.25); }
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.25);
+}
 
 /* ─── Section ────────────────────────────────────────────── */
 .section-padding {
@@ -95,6 +113,7 @@ body::before {
 .gradient-border {
   position: relative;
 }
+
 .gradient-border::before {
   content: '';
   position: absolute;

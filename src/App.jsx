@@ -11,22 +11,31 @@ import Footer from './components/Footer'
 export default function App() {
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smooth: true,
+            lerp: 0.08,           // smoothness factor (0–1, lower = smoother)
+            wheelMultiplier: 1,
+            touchMultiplier: 1.5,
+            infinite: false,
         })
 
+        // Expose lenis globally so Navbar can use lenis.scrollTo()
+        window.__lenis = lenis
+
+        let rafId
         function raf(time) {
             lenis.raf(time)
-            requestAnimationFrame(raf)
+            rafId = requestAnimationFrame(raf)
         }
-        requestAnimationFrame(raf)
+        rafId = requestAnimationFrame(raf)
 
-        return () => lenis.destroy()
+        return () => {
+            cancelAnimationFrame(rafId)
+            lenis.destroy()
+            window.__lenis = null
+        }
     }, [])
 
     return (
-        <div className="bg-[#0A0A0A] min-h-screen text-white font-inter overflow-x-hidden">
+        <div className="bg-[#0A0A0A] min-h-screen text-white overflow-x-hidden">
             <Navbar />
             <main>
                 <Hero />

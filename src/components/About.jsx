@@ -44,7 +44,11 @@ export default function About() {
                                         background: 'linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(139,92,246,0.15) 50%, rgba(16,185,129,0.15) 100%)',
                                     }}
                                 />
-                                <span className="text-8xl select-none relative z-10">⚡</span>
+                                <img
+                                    src="/profile.jpg"
+                                    alt="Deepak P V"
+                                    className="absolute inset-0 w-full h-full object-cover object-top rounded-full z-10"
+                                />
                             </div>
                             {/* Floating badges */}
                             <motion.div

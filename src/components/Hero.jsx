@@ -17,7 +17,12 @@ const itemVariants = {
 export default function Hero() {
     const handleScroll = (e, href) => {
         e.preventDefault()
-        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+        const lenis = window.__lenis
+        if (lenis) {
+            lenis.scrollTo(href, { offset: -80, duration: 1.2 })
+        } else {
+            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+        }
     }
 
     return (

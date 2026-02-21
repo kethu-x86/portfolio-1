@@ -41,8 +41,13 @@ export default function Navbar() {
     const handleClick = (e, href) => {
         e.preventDefault()
         setMenuOpen(false)
-        const target = document.querySelector(href)
-        if (target) target.scrollIntoView({ behavior: 'smooth' })
+        const lenis = window.__lenis
+        if (lenis) {
+            lenis.scrollTo(href, { offset: -80, duration: 1.2 })
+        } else {
+            const target = document.querySelector(href)
+            if (target) target.scrollIntoView({ behavior: 'smooth' })
+        }
     }
 
     return (
