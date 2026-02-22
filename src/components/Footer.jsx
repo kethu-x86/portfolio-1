@@ -9,7 +9,7 @@ export default function Footer() {
     const year = new Date().getFullYear()
 
     return (
-        <footer className="border-t border-white/5 py-10 px-6">
+        <footer className="border-t border-white/5 py-10 px-6 snap-start">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 {/* Left */}
                 <div className="flex flex-col items-center md:items-start gap-1">

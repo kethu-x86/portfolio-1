@@ -5,7 +5,7 @@ export default function AnimatedSection({ children, className = '', id = '' }) {
     return (
         <motion.section
             id={id}
-            className={`section-padding ${className}`}
+            className={`section-padding snap-start ${className}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}

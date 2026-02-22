@@ -17,7 +17,7 @@ const itemVariants = {
 export default function Hero() {
     const handleScroll = (e, href) => {
         e.preventDefault()
-        const lenis = window.__lenis
+        const lenis = globalThis.__lenis
         if (lenis) {
             lenis.scrollTo(href, { offset: -80, duration: 1.2 })
         } else {
@@ -28,7 +28,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-radial-vignette"
+            className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-radial-vignette snap-start"
         >
             <motion.div
                 className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center gap-8"

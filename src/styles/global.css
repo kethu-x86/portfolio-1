@@ -1,36 +1,50 @@
 @import "tailwindcss";
 
-/* ─── Root Variables (Aligned with Tailwind) ────────────── */
-:root {
-  --bg: #0e1113;
-  --text-primary: #f5f5f5;
+@theme {
+  --color-bg: #0E1113;
+  --color-card: #151A1D;
+  --color-divider: #22272B;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #9BA3A7;
+  --color-accent-bronze: #B08D57;
+  --color-accent-sage: #5F8F73;
+  --color-accent-indigo: #4C5C8A;
+
+  --font-sans: "Inter", "sans-serif";
+  --font-heading: "Manrope", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+
+  --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-slow-gradient: slowGradient 15s ease infinite;
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slowGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 }
 
-/* ─── Base Reset ─────────────────────────────────────────── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ─── Custom Global Styles ───────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  background-color: var(--bg);
-  color: var(--text-primary);
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Manrope", sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 /* ─── Custom Scrollbar ───────────────────────────────────── */
@@ -39,16 +53,16 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0e1113;
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #22272b;
+  background: var(--color-divider);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4c5c8a;
+  background: var(--color-accent-indigo);
 }
 
 /* ─── Subtle Noise Texture Overlay ───────────────────────── */
@@ -76,4 +90,11 @@ body::before {
 ::selection {
   background: rgba(176, 141, 87, 0.3); /* Bronze selection */
   color: #fff;
+}
+
+/* ─── Custom Utilities ───────────────────────────────────── */
+@layer utilities {
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
 }
